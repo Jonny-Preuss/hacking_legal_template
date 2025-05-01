@@ -3,15 +3,16 @@ from src import ingest_parse as ip
 from src import chunk
 from src import embed_and_store as emb
 from src import query_pipeline as qp
-from langchain.chat_models import ChatOpenAI
+# from langchain.chat_models import ChatOpenAI
+from langchain_openai import ChatOpenAI
 
 #TODO(Jonny): Set up logging and linting
 
 FILE_PATH = "data/Handelsblatt_Artikel_Dobelli.pdf"
 
 llm = ChatOpenAI(
-    openai_api_key=con.OPENAI_API_KEY,
-    model_name=con.OPENAI_MODEL_NAME,
+    api_key=con.OPENAI_API_KEY,
+    model=con.OPENAI_MODEL_NAME,
     temperature=1.0
 )
 
