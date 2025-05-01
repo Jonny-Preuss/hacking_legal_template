@@ -7,6 +7,5 @@ Template repo for a hackathon in the legal tech area.
 2) Activate the environment:
     ```bash
     conda activate your-env-name
-3) Insert your own API keys in the ".env" file
-TODO(Jonny): insert app file name
-4) Run the main app "TBD.py"
+3) Insert your own API keys in the `.env` file
+4) Run the main app `TBD.py`
