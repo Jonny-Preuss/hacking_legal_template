@@ -1,4 +1,5 @@
 from langchain.chains import RetrievalQA
+import logging
 
 persist_directory = ".chroma"
 
@@ -11,7 +12,7 @@ def ask(query, llm, vectordb):
         retriever=vectordb.as_retriever(),
         return_source_documents=True
     )
-    print(f"LLM type: {type(llm)}, model: {getattr(llm, 'model_name', 'n/a')}")
+    logging.info(f"LLM type: {type(llm)}, model: {getattr(llm, 'model_name', 'n/a')}")
     result = qa.invoke({"query": query})
 
     answer = result.get("result", "No answer found.")
